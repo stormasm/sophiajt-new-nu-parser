@@ -1,0 +1,32 @@
+---
+source: src/test.rs
+expression: evaluate_example(path)
+input_file: tests/if_.nu
+---
+==== COMPILER ====
+0: Variable (4 to 5)
+1: Int (8 to 11)
+2: Let { variable_name: NodeId(0), ty: None, initializer: NodeId(1), is_mutable: false } (0 to 11)
+3: Variable (16 to 18)
+4: LessThan (19 to 20)
+5: Int (21 to 24)
+6: BinaryOp { lhs: NodeId(3), op: NodeId(4), rhs: NodeId(5) } (16 to 24)
+7: Int (31 to 32)
+8: Block(BlockId(0)) (25 to 35)
+9: Variable (43 to 45)
+10: GreaterThan (46 to 47)
+11: Int (48 to 51)
+12: BinaryOp { lhs: NodeId(9), op: NodeId(10), rhs: NodeId(11) } (43 to 51)
+13: Int (58 to 59)
+14: Block(BlockId(1)) (52 to 62)
+15: Int (73 to 74)
+16: Block(BlockId(2)) (67 to 76)
+17: If { condition: NodeId(12), then_block: NodeId(14), else_block: Some(NodeId(16)) } (40 to 76)
+18: If { condition: NodeId(6), then_block: NodeId(8), else_block: Some(NodeId(17)) } (13 to 76)
+19: Block(BlockId(3)) (0 to 77)
+==== SCOPE ====
+0: Frame Scope, variables: [ x: NodeId(0) ], node_id: NodeId(19)
+1: Frame Scope, variables: [  ], node_id: NodeId(8)
+2: Frame Scope, variables: [  ], node_id: NodeId(14)
+3: Frame Scope, variables: [  ], node_id: NodeId(16)
+
